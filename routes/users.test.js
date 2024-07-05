@@ -180,9 +180,6 @@ describe("GET /users", function () {
   });
 
   test("fails: test next() handler", async function () {
-    // there's no normal failure event which will cause this route to fail ---
-    // thus making it hard to test that the error-handler works with it. This
-    // should cause an error, all right :)
     await db.query("DROP TABLE users CASCADE");
     const resp = await request(app)
       .get("/users")
