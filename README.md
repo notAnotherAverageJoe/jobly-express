@@ -24,24 +24,21 @@ Jobly is a RESTful API for managing job listings and company information. This d
 20. Clone the repository:
 
 ```sh
-Copy code
+Copy code snippets bellow for ease of
 git clone https://github.com/yourusername/jobly.git
 cd jobly
 Install dependencies:
 
 sh
-Copy code
 npm install
 Set up the database:
 
 sh
-Copy code
 createdb jobly
 psql jobly < data.sql
 (Optional) Set up the test database:
 
 sh
-Copy code
 createdb jobly_test
 psql jobly_test < data.sql
 Configuration
@@ -49,7 +46,6 @@ Environment Variables
 Create a .env file in the root directory of your project and add the following environment variables:
 
 env
-Copy code
 DB_USER=joseph
 DB_PASSWORD=Buddha14!
 DB_HOST=localhost
@@ -61,7 +57,6 @@ PORT=3001
 Create a .env.test file for testing environment:
 
 env
-Copy code
 DB_USER=test_user
 DB_PASSWORD=test_pass
 DB_HOST=test_host
@@ -99,7 +94,8 @@ Run the tests using the following command:
 
 ```sh
 Copy code
-NODE_ENV=test jest -i
+NODE_ENV=other jest -i
+
 Explanation:
 NODE_ENV=test: This sets the environment to "test" which will ensure that the application uses the test database and other test-specific configurations.
 jest -i: This command runs Jest in interactive mode, which is helpful for running and managing tests efficiently.
@@ -257,7 +253,7 @@ Copy code
 "message": "Error message",
 "status": 400
 }
-}
+
 ```
 
 ## Database Schema
@@ -266,6 +262,7 @@ Copy code
 
 ## Companies
 
+```javascript
 handle (primary key): Unique identifier for the company.
 name: Name of the company.
 description: Description of the company.
@@ -286,6 +283,7 @@ email: Email address of the user.
 isAdmin: Boolean indicating if the user is an admin.
 Environment Variables
 The following environment variables need to be configured:
+```
 
 ```javascript DB_USER: Database username.
 DB_PASSWORD: Database password.

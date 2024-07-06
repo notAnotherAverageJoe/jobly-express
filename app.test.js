@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("./app"); // Adjust the path as necessary
+const app = require("./app");
 const db = require("./db");
 
 // Test for 404 on a non-existing path

@@ -12,9 +12,9 @@ const { BadRequestError } = require("../expressError");
  *
  * @returns {Object} {sqlSetCols, dataToUpdate}
  *
- * @example {firstName: 'Aliya', age: 32} =>
+ * @example {firstName: 'Ben', age: 32} =>
  *   { setCols: '"first_name"=$1, "age"=$2',
- *     values: ['Aliya', 32] }
+ *     values: ['Ben', 32] }
  */
 
 function sqlForPartialUpdate(dataToUpdate, jsToSql) {
@@ -22,8 +22,8 @@ function sqlForPartialUpdate(dataToUpdate, jsToSql) {
   if (keys.length === 0) throw new BadRequestError("No data");
 
   // {firstName: 'Aliya', age: 32} => ['"first_name"=$1', '"age"=$2']
-  const cols = keys.map((colName, idx) =>
-      `"${jsToSql[colName] || colName}"=$${idx + 1}`,
+  const cols = keys.map(
+    (colName, idx) => `"${jsToSql[colName] || colName}"=$${idx + 1}`
   );
 
   return {
